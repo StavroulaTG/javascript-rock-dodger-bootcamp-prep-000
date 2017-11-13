@@ -87,12 +87,18 @@ if (top < GAME_HEIGHT) {
  * Finally, alert "YOU LOSE!" to the player.
  */
 function endGame() {
+  clearInterval(gameInterval)
+  
+  ROCKS.forEach(function (rock) {rock.remove() })
+
   windowRemoveEventListener('keydown', moveDodger)
-  window.clearInterval(gameInterval)
-  ROCKS.forEach(function (rock) {
-    rock.remove()
-  })
+
+  START.innerHTML = 'Play again?'
+  START.style.display = 'inline'
+
+  return alert ('YOU LOSE!')
 }
+
 
 function moveDodger(e) {
    const code = e.which
@@ -122,7 +128,7 @@ function moveDodger(e) {
        const left = positionToInteger(DODGER.style.left)
 
        if (left > 0) {
-         DODGER.style.left = `${left - 4}px`;
+         DODGER.style.left = `${left - 4}px`
        }
      })
    }
@@ -136,7 +142,7 @@ function moveDodgerRight() {
      const left = positionToInteger(DODGER.style.left)
 
      if (left < 360) {
-       DODGER.style.left = `${left + 4}px`;
+       DODGER.style.left = `${left + 4}px`
     }
    })
  }
