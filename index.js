@@ -88,7 +88,7 @@ if (top < GAME_HEIGHT) {
  */
 function endGame() {
   clearInterval(gameInterval)
-  
+
   ROCKS.forEach(function (rock) {rock.remove() })
 
   windowRemoveEventListener('keydown', moveDodger)
