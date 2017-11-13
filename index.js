@@ -72,9 +72,9 @@ function createRock(x) {
 function endGame() {
   clearInterval(gameInterval)
 
-  ROCKS.forEach(function (rock) {rock.remove() })
+  ROCKS.forEach(function(rock) {rock.remove() })
 
-  windowRemoveEventListener('keydown', moveDodger)
+  window.removeEventListener('keydown', moveDodger)
 
   START.innerHTML = 'Play again?'
   START.style.display = 'inline'
