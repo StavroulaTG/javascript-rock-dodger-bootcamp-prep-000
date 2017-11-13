@@ -48,13 +48,17 @@ if ( (rockLeftEdge <= dodgerLeftEdge && rockRightEdge >= dodgerLeftEdge) ||
   function moveRock() {
     rock.style.top = `${top += 2}px`
 
-    if (checkCollision(rock) === true) {
+    if (checkCollision(rock)) {
   return endGame()
 }
      * If a rock collides with the DODGER,
      * we should call endGame()
      */
 if (top < GAME_HEIGHT) {
+  window.requestAnimationFrame(moveRock) }
+    else {
+       rock.remove()
+  }
     /**
      * Otherwise, if the rock hasn't reached the bottom of
      * the GAME, we want to move it again.
@@ -69,11 +73,9 @@ if (top < GAME_HEIGHT) {
 
   // Add the rock to ROCKS so that we can remove all rocks
   // when there's a collision
-  window.requestAnimationFrame(moveRock) }
-  else {
-    rock.remove()
-  }}
-  window.requestAnimationFrame(moveRock)
+}
+  window.requestAnimationFrame(moveRock) 
+
   ROCKS.push(rock)
 
   // Finally, return the rock element you've created
