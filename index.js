@@ -74,7 +74,7 @@ if (top < GAME_HEIGHT) {
   // Add the rock to ROCKS so that we can remove all rocks
   // when there's a collision
 }
-  window.requestAnimationFrame(moveRock) 
+  window.requestAnimationFrame(moveRock)
 
   ROCKS.push(rock)
 
