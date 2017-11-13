@@ -35,12 +35,13 @@ if ( (rockLeftEdge <= dodgerLeftEdge && rockRightEdge >= dodgerLeftEdge) ||
       const rock = document.createElement('div')
 
       rock.className = 'rock'
-      rock.style.left = `${x}px`;
+      rock.style.left = `${x}px`
 
       var top = 0
-      rock.style.top = `${top}px`
+      
+      rock.style.top = top
 
-      GAME.appendChild(rock);
+      GAME.appendChild(rock)
     /**
    * This function moves the rock. (2 pixels at a time
    * seems like a good pace.)
