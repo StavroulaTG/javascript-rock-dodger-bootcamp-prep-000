@@ -38,7 +38,7 @@ if ( (rockLeftEdge <= dodgerLeftEdge && rockRightEdge >= dodgerLeftEdge) ||
       rock.style.left = `${x}px`
 
       var top = 0
-      
+
       rock.style.top = top
 
       GAME.appendChild(rock)
